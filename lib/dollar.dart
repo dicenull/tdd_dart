@@ -1,17 +1,9 @@
-class Dollar {
-  final int _amount;
+import 'package:tdd_dart/money.dart';
 
-  Dollar(this._amount);
+class Dollar extends Money {
+  Dollar(int amount) : super(amount);
 
   Dollar times(int multiplier) {
-    return Dollar(_amount * multiplier);
+    return Dollar(amount * multiplier);
   }
-
-  equals(Object object) {
-    Dollar dollar = object as Dollar;
-    return _amount == dollar._amount;
-  }
-
-  @override
-  bool operator ==(Object other) => equals(other);
 }
