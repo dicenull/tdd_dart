@@ -12,4 +12,10 @@ void main() {
     expect(Dollar(5).equals(Dollar(5)), isTrue);
     expect(Dollar(5).equals(Dollar(6)), isFalse);
   });
+
+  test('フランの掛け算', () async {
+    final five = Franc(5);
+    expect(Franc(10), equals(five.times(2)));
+    expect(Franc(15), equals(five.times(3)));
+  });
 }
