@@ -1,4 +1,5 @@
-import 'package:tdd_dart/money.dart';
+import 'package:tdd_dart/dollar.dart';
+import 'package:tdd_dart/franc.dart';
 import 'package:test/test.dart';
 
 void main() {
