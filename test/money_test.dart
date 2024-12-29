@@ -4,12 +4,8 @@ import 'package:test/test.dart';
 void main() {
   test('掛け算', () async {
     final five = Dollar(5);
-    var product = five.times(2);
-
-    expect(10, equals(product.amount));
-
-    product = five.times(3);
-    expect(15, equals(product.amount));
+    expect(Dollar(10), equals(five.times(2)));
+    expect(Dollar(15), equals(five.times(3)));
   });
 
   test('等価性', () async {

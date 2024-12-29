@@ -11,4 +11,7 @@ class Dollar {
     Dollar dollar = object as Dollar;
     return amount == dollar.amount;
   }
+
+  @override
+  bool operator ==(Object other) => equals(other);
 }
