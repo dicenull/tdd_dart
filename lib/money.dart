@@ -5,7 +5,7 @@ class Money {
 
   equals(Object object) {
     Money money = object as Money;
-    return amount == money.amount;
+    return amount == money.amount && runtimeType == money.runtimeType;
   }
 
   @override
