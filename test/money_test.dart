@@ -11,4 +11,9 @@ void main() {
     product = five.times(3);
     expect(15, equals(product.amount));
   });
+
+  test('等価性', () async {
+    expect(Dollar(5).equals(Dollar(5)), isTrue);
+    expect(Dollar(5).equals(Dollar(6)), isFalse);
+  });
 }
