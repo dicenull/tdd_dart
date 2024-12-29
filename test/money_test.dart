@@ -4,9 +4,11 @@ import 'package:test/test.dart';
 void main() {
   test('掛け算', () async {
     final five = Dollar(5);
+    var product = five.times(2);
 
-    five.times(2);
+    expect(10, equals(product.amount));
 
-    expect(10, equals(five.amount));
+    product = five.times(3);
+    expect(15, equals(product.amount));
   });
 }
