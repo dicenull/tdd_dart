@@ -1,27 +1,26 @@
-import 'package:tdd_dart/dollar.dart';
-import 'package:tdd_dart/franc.dart';
+import 'package:tdd_dart/money.dart';
 import 'package:test/test.dart';
 
 void main() {
   test('掛け算', () async {
-    final five = Dollar(5);
-    expect(Dollar(10), equals(five.times(2)));
-    expect(Dollar(15), equals(five.times(3)));
+    Money five = Money.dollar(5);
+    expect(Money.dollar(10), equals(five.times(2)));
+    expect(Money.dollar(15), equals(five.times(3)));
   });
 
   test('等価性', () async {
-    expect(Dollar(5).equals(Dollar(5)), isTrue);
-    expect(Dollar(5).equals(Dollar(6)), isFalse);
+    expect(Money.dollar(5).equals(Money.dollar(5)), isTrue);
+    expect(Money.dollar(5).equals(Money.dollar(6)), isFalse);
 
-    expect(Franc(5).equals(Franc(5)), isTrue);
-    expect(Franc(5).equals(Franc(6)), isFalse);
+    expect(Money.franc(5).equals(Money.franc(5)), isTrue);
+    expect(Money.franc(5).equals(Money.franc(6)), isFalse);
 
-    expect(Franc(5).equals(Dollar(5)), isFalse);
+    expect(Money.franc(5).equals(Money.dollar(5)), isFalse);
   });
 
   test('フランの掛け算', () async {
-    final five = Franc(5);
-    expect(Franc(10), equals(five.times(2)));
-    expect(Franc(15), equals(five.times(3)));
+    final five = Money.franc(5);
+    expect(Money.franc(10), equals(five.times(2)));
+    expect(Money.franc(15), equals(five.times(3)));
   });
 }
