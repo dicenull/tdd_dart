@@ -40,4 +40,13 @@ void main() {
     expect(five, equals(sum.augend));
     expect(five, equals(sum.addend));
   });
+
+  test('$Sumを$Bankで換金できる', () {
+    Expression sum = Sum(Money.dollar(3), Money.dollar(4));
+    final bank = Bank();
+
+    // 仮実装が10ドルなので、失敗するような値を選ぶ
+    final result = bank.reduce(sum, 'USD');
+    expect(Money.dollar(7), equals(result));
+  });
 }

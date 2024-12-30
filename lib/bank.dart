@@ -1,8 +1,10 @@
 import 'package:tdd_dart/expression.dart';
 import 'package:tdd_dart/money.dart';
+import 'package:tdd_dart/sum.dart';
 
 class Bank {
   Money reduce(Expression source, String to) {
-    return Money.dollar(10);
+    final sum = source as Sum;
+    return sum.reduce(to);
   }
 }
