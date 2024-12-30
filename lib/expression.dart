@@ -1,5 +1,6 @@
+import 'package:tdd_dart/bank.dart';
 import 'package:tdd_dart/money.dart';
 
 abstract interface class Expression {
-  Money reduce(String to);
+  Money reduce(Bank bank, String to);
 }

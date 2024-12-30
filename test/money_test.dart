@@ -55,4 +55,11 @@ void main() {
     final result = bank.reduce(Money.dollar(1), 'USD');
     expect(Money.dollar(1), equals(result));
   });
+
+  test('異なる通貨を換金できる', () {
+    final bank = Bank();
+    bank.addRate('CHF', 'USD', 2);
+    final result = bank.reduce(Money.franc(2), 'USD');
+    expect(Money.dollar(1), equals(result));
+  });
 }

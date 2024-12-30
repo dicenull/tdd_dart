@@ -1,3 +1,4 @@
+import 'package:tdd_dart/bank.dart';
 import 'package:tdd_dart/expression.dart';
 import 'package:tdd_dart/sum.dart';
 
@@ -40,7 +41,9 @@ class Money implements Expression {
     return Sum(this, addend);
   }
 
-  Money reduce(String to) {
-    return this;
+  @override
+  Money reduce(Bank bank, String to) {
+    final rate = bank.rate(currency(), to);
+    return Money(amount ~/ rate, to);
   }
 }
