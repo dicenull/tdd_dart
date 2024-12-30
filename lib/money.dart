@@ -1,4 +1,7 @@
-class Money {
+import 'package:tdd_dart/expression.dart';
+import 'package:tdd_dart/sum.dart';
+
+class Money implements Expression {
   final int amount;
   final String currencyName;
 
@@ -31,5 +34,9 @@ class Money {
 
   static Money franc(int amount) {
     return Money(amount, 'CHF');
+  }
+
+  Expression plus(Money addend) {
+    return Sum(this, addend);
   }
 }
