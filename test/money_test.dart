@@ -19,8 +19,8 @@ void main() {
   });
 
   test('通貨', () async {
-    expect('USD', equals(Money.dollar(1).currency()));
-    expect('CHF', equals(Money.franc(1).currency()));
+    expect('USD', equals(Money.dollar(1).currency));
+    expect('CHF', equals(Money.franc(1).currency));
   });
 
   test('5ドル+5ドルは10ドル', () {

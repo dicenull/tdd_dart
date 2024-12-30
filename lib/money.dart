@@ -12,13 +12,11 @@ class Money implements Expression {
     return Money(amount * multiplier, currencyName);
   }
 
-  String currency() {
-    return currencyName;
-  }
+  String get currency => currencyName;
 
   equals(Object object) {
     Money money = object as Money;
-    return amount == money.amount && currency() == money.currency();
+    return amount == money.amount && currency == money.currency;
   }
 
   @override
@@ -43,7 +41,7 @@ class Money implements Expression {
 
   @override
   Money reduce(Bank bank, String to) {
-    final rate = bank.rate(currency(), to);
+    final rate = bank.rate(currency, to);
     return Money(amount ~/ rate, to);
   }
 }
