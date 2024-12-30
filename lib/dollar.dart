@@ -1,9 +1,10 @@
 import 'package:tdd_dart/money.dart';
 
 class Dollar extends Money {
-  Dollar(int amount) : super(amount);
+  Dollar(int amount, String name) : super(amount, name);
 
+  @override
   Money times(int multiplier) {
-    return Dollar(amount * multiplier);
+    return Money.dollar(amount * multiplier);
   }
 }

@@ -23,4 +23,9 @@ void main() {
     expect(Money.franc(10), equals(five.times(2)));
     expect(Money.franc(15), equals(five.times(3)));
   });
+
+  test('通貨', () async {
+    expect('USD', equals(Money.dollar(1).currency()));
+    expect('CHF', equals(Money.franc(1).currency()));
+  });
 }
