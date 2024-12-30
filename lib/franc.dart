@@ -5,6 +5,6 @@ class Franc extends Money {
 
   @override
   Money times(int multiplier) {
-    return Money.franc(amount * multiplier);
+    return Franc(amount * multiplier, currencyName);
   }
 }

@@ -28,4 +28,8 @@ void main() {
     expect('USD', equals(Money.dollar(1).currency()));
     expect('CHF', equals(Money.franc(1).currency()));
   });
+
+  test('お金型の10フランとフラン型の10フランは同じ', () async {
+    expect(Money(10, 'CHF').equals(Money.franc(10)), isTrue);
+  });
 }
