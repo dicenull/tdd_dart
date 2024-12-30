@@ -1,6 +1,3 @@
-import 'package:tdd_dart/dollar.dart';
-import 'package:tdd_dart/franc.dart';
-
 class Money {
   final int amount;
   final String currencyName;
@@ -29,10 +26,10 @@ class Money {
   }
 
   static Money dollar(int amount) {
-    return Dollar(amount, 'USD');
+    return Money(amount, 'USD');
   }
 
   static Money franc(int amount) {
-    return Franc(amount, 'CHF');
+    return Money(amount, 'CHF');
   }
 }
