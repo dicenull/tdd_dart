@@ -8,6 +8,7 @@ class Money implements Expression {
 
   Money(this.amount, this.currencyName);
 
+  @override
   Expression times(int multiplier) {
     return Money(amount * multiplier, currencyName);
   }
