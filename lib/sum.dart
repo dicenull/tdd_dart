@@ -17,6 +17,6 @@ class Sum implements Expression {
 
   @override
   Expression plus(Expression addend) {
-    return this;
+    return Sum(this, addend);
   }
 }

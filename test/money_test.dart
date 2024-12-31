@@ -76,4 +76,17 @@ void main() {
     Money result = bank.reduce(fiveBucks.plus(tenFrancs), 'USD');
     expect(Money.dollar(10), equals(result));
   });
+
+  test('$Sumに$Moneyを足し算できる', () {
+    final fiveBucks = Money.dollar(5);
+    final tenFrancs = Money.franc(10);
+    final bank = Bank();
+    bank.addRate('CHF', 'USD', 2);
+
+    // Sumのplusをテストしたい
+    Expression sum = Sum(fiveBucks, tenFrancs).plus(fiveBucks);
+
+    final result = bank.reduce(sum, 'USD');
+    expect(Money.dollar(15), equals(result));
+  });
 }
