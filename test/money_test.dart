@@ -56,6 +56,11 @@ void main() {
     expect(Money.dollar(1), equals(result));
   });
 
+  test('1USD:1USD', () {
+    final bank = Bank();
+    expect(1, equals(bank.rate('USD', 'USD')));
+  });
+
   test('異なる通貨を換金できる', () {
     final bank = Bank();
     bank.addRate('CHF', 'USD', 2);
