@@ -67,4 +67,13 @@ void main() {
     final result = bank.reduce(Money.franc(2), 'USD');
     expect(Money.dollar(1), equals(result));
   });
+
+  test('5USD+10CHFは10USD(レートが2:1)', () {
+    Expression fiveBucks = Money.dollar(5);
+    Expression tenFrancs = Money.franc(10);
+    final bank = Bank();
+    bank.addRate('CHF', 'USD', 2);
+    Money result = bank.reduce(fiveBucks.plus(tenFrancs), 'USD');
+    expect(Money.dollar(10), equals(result));
+  });
 }
