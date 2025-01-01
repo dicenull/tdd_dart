@@ -4,9 +4,9 @@ class TestCase:
     def setUp(self):
         pass
     def run(self):
+        self.setUp()
         method = getattr(self, self.name)
         method()
-        self.setUp()
 
 class WasRun(TestCase):
     def __init__(self, name):
