@@ -1,3 +1,12 @@
+
+class TestResult:
+    def __init__(self):
+        self.runCount = 0
+    def testStarted(self):
+        self.runCount = self.runCount + 1
+    def summary(self):
+        return "%d run, 0 failed" % self.runCount
+
 class TestCase:
     def __init__(self, name):
         self.name = name
@@ -6,10 +15,13 @@ class TestCase:
     def tearDown(self):
         pass
     def run(self):
+        result = TestResult()
+        result.testStarted()
         self.setUp()
         method = getattr(self, self.name)
         method()
         self.tearDown()
+        return result
 
 class WasRun(TestCase):
     def setUp(self):
@@ -20,6 +32,7 @@ class WasRun(TestCase):
 
     def tearDown(self):
         self.log = self.log + "tearDown "
+
 
 class TestCaseTest(TestCase):
     def testTemplateMethod(self):
