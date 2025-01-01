@@ -3,10 +3,13 @@ class TestCase:
         self.name = name
     def setUp(self):
         pass
+    def tearDown(self):
+        pass
     def run(self):
         self.setUp()
         method = getattr(self, self.name)
         method()
+        self.tearDown()
 
 class WasRun(TestCase):
     def setUp(self):
@@ -14,6 +17,9 @@ class WasRun(TestCase):
     
     def testMethod(self):
         self.log = self.log + "testMethod "
+
+    def tearDown(self):
+        self.log = self.log + "tearDown "
 
 class TestCaseTest(TestCase):
     def testTemplateMethod(self):
