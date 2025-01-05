@@ -1,2 +1,8 @@
-A sample command-line application with an entrypoint in `bin/`, library code
-in `lib/`, and example unit test in `test/`.
+# テスト駆動開発 Dart写経
+
+テスト駆動開発の「多国通貨」と「xUnit」を写経しました。
+多国通貨はDartに置き換えて書いています。
+
+予想外のレッドには再現する回帰テストで対応する
+
+テスト駆動開発 https://amzn.asia/d/bYCSj5S
